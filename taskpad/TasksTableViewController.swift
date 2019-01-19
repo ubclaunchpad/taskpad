@@ -16,6 +16,7 @@ class TasksTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // TODO: As a user, I want the title of the screen to say "Tasks" instead of "Root View Controller"
+        // Went to Main.storyboard
 
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
