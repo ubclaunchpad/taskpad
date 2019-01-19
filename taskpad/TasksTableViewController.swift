@@ -16,7 +16,6 @@ class TasksTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // TODO: As a user, I want the title of the screen to say "Tasks" instead of "Root View Controller"
-        self.navigationItem.title = "Tasks"
         
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
@@ -51,7 +50,6 @@ class TasksTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // TODO: As a user I would prefer if the app didn't crash here when I try to delete a task.
-            tasks.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -83,9 +81,8 @@ class TasksTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let taskViewController = segue.destination as? TaskViewController {
-            // TODO: As a user, I would like to see the task in the center of the screen after I click it.
-            let _ = taskViewController // delete this line after implementation
+        if let taskViewController = segue.destination as? TaskViewController, let indexPath = tableView.indexPathForSelectedRow {
+            taskViewController.label = tasks[indexPath.row].title
         }
     }
 
