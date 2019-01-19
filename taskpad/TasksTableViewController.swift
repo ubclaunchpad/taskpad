@@ -41,7 +41,7 @@ class TasksTableViewController: UITableViewController {
         cell.textLabel?.text = tasks[indexPath.row].title
         
         // TODO: As a user, I want to see images (that I have associated with a task) to be visible in that row.
-
+        print("test commit")
         return cell
     }
     
@@ -82,8 +82,11 @@ class TasksTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let taskViewController = segue.destination as? TaskViewController {
+            
+           
             // TODO: As a user, I would like to see the task in the center of the screen after I click it.
             let _ = taskViewController // delete this line after implementation
+            
         }
     }
 
