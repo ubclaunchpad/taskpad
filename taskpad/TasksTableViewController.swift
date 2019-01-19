@@ -17,13 +17,13 @@ class TasksTableViewController: UITableViewController {
         
         // TODO: As a user, I want the title of the screen to say "Tasks" instead of "Root View Controller"
         
-        
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showCreateTask(sender:)))
         self.navigationItem.leftBarButtonItem = addButtonItem
         
         // TODO: As a developer, I want there to be several pre-generated tasks when the app loads for testing purposes.
+        taskA = 
     }
 
     // MARK: - Table view data source
