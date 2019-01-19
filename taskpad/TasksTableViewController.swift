@@ -23,7 +23,6 @@ class TasksTableViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = addButtonItem
         
         // TODO: As a developer, I want there to be several pre-generated tasks when the app loads for testing purposes.
-        taskA = 
     }
 
     // MARK: - Table view data source
@@ -58,6 +57,10 @@ class TasksTableViewController: UITableViewController {
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         // TODO: There is a bug here. When we rearrange the table view, the contents of `tasks` do not change. Create a few tasks, and try scrolling up (drag finger from bottom to top) and letting go. Notice how the tasks go back to the order they were before the rearranging. Fix this here!
+        let toMove = self.tasks[fromIndexPath.row]
+        tasks.remove(at: fromIndexPath.row)
+        tasks.insert(toMove, at: to.row)
+        
     }
     
     @objc func showCreateTask(sender: UIBarButtonItem) {
