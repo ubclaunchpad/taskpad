@@ -16,6 +16,7 @@ class TasksTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // TODO: As a user, I want the title of the screen to say "Tasks" instead of "Root View Controller"
+        self.navigationItem.title = "Tasks"
 
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
@@ -37,11 +38,10 @@ class TasksTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
-
         cell.textLabel?.text = tasks[indexPath.row].title
         
         // TODO: As a user, I want to see images (that I have associated with a task) to be visible in that row.
-        print("test commit")
+        cell.imageView?.image = tasks[indexPath.row].image
         return cell
     }
     
