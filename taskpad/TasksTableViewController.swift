@@ -74,6 +74,7 @@ class TasksTableViewController: UITableViewController {
             self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
         })
         taskInputAlert.addAction(confirmAction)
+        taskInputAlert.addAction(UIAlertAction(title: "Cancel Task", style: .default, handler: nil))
         // TODO: As a user, I would like to cancel adding a task when I don't wan't to add a task any more.
         present(taskInputAlert, animated: true, completion: nil)
     }
